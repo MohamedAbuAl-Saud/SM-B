@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-dark: #000000;
+    --accent-red: #FF2638;
+    --accent-crimson: #8D101F;
+    --surface-charcoal: #050507;
+    --surface-graphite: #0A0A0C;
+    --border-subtle: #141416;
+    --text-muted: #9CA3AF;
+  }
+
+  body {
+    background-color: #000000;
+    color: #F3F4F6;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .font-display {
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: normal;
+  }
+
+  .font-mono-data {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2430;
+  border-radius: 4px;
+  border: 1px solid #2B3040;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2638;
+}
+
+/* Subtle red glow and cyber accents */
+.cyber-glow {
+  box-shadow: 0 0 25px rgba(255, 38, 56, 0.22);
+}
+
+.cyber-glow-sm {
+  box-shadow: 0 0 12px rgba(255, 38, 56, 0.15);
+}
+
+.cyber-glow-strong {
+  box-shadow: 0 0 40px rgba(255, 38, 56, 0.45);
+}
+
+/* Glassmorphism cyber box with transparent frosted glass & red neon glow on hover */
+.cyber-glass-box {
+  background: rgba(10, 10, 15, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 38, 56, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyber-glass-box:hover {
+  background: rgba(15, 15, 22, 0.75);
+  border-color: rgba(255, 38, 56, 0.6);
+  box-shadow: 0 12px 40px 0 rgba(255, 38, 56, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Futuristic live terminal scanning line effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 4s linear infinite;
+}
+
+/* Subtle pulse border */
+@keyframes pulseBorder {
+  0%, 100% {
+    border-color: rgba(255, 38, 56, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 38, 56, 0.8);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 3s ease-in-out infinite;
+}
+
+/* Infinite Marquee for Scrolling Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
