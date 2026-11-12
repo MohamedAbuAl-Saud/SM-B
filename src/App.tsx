@@ -14,6 +14,9 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang === 'ar' || urlLang === 'en') return urlLang;
     const saved = localStorage.getItem('sm_portfolio_lang');
     return (saved === 'ar' || saved === 'en') ? saved : 'en';
   });
