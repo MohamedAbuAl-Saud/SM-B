@@ -21,23 +21,23 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ cert, langua
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn">
       {/* Backdrop click to dismiss */}
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative z-10 w-full max-w-4xl max-h-[92vh] flex flex-col bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative z-10 w-full max-w-4xl max-h-[92dvh] flex flex-col bg-zinc-950 border border-zinc-900 rounded-2xl overflow-hidden shadow-2xl">
         
         {/* Top Header */}
-        <div className="px-6 py-4 bg-black border-b border-zinc-900 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#FF2638]/20 border border-[#FF2638] flex items-center justify-center">
+        <div className="px-3.5 sm:px-6 py-3 sm:py-4 bg-black border-b border-zinc-900 flex items-center justify-between gap-2.5 sm:gap-4 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+            <div className="w-8 h-8 rounded-lg bg-[#FF2638]/20 border border-[#FF2638] flex items-center justify-center shrink-0">
               <Award className="w-4 h-4 text-[#FF2638]" />
             </div>
-            <div>
-              <div className="text-xs font-mono-data text-[#FF2638] font-bold">
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] sm:text-xs font-mono-data text-[#FF2638] font-bold truncate">
                 CERTIFICATE #{cert.id} · {cert.verificationPlatform || 'OFFICIAL RECORD'}
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-white truncate max-w-md sm:max-w-xl">
+              <h3 className="text-xs sm:text-base font-bold text-white leading-snug line-clamp-2 sm:truncate">
                 {language === 'en' ? cert.courseTitle : cert.courseTitleAr}
               </h3>
             </div>
@@ -45,15 +45,16 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ cert, langua
 
           <button
             onClick={onClose}
-            className="p-2 text-[#9CA3AF] hover:text-white hover:bg-zinc-900 rounded-lg transition-colors cursor-pointer"
+            type="button"
+            className="p-2 text-white bg-zinc-900 hover:bg-[#FF2638] border border-zinc-800 hover:border-[#FF2638] rounded-lg transition-colors cursor-pointer shrink-0"
             aria-label="Close modal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 overflow-y-auto space-y-6">
+        <div className="p-3.5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6">
           
           {/* Certificate Image Frame */}
           <div className={`relative w-full rounded-xl overflow-hidden bg-black border border-zinc-900 flex items-center justify-center ${
