@@ -3,12 +3,17 @@ export type Language = 'en' | 'ar';
 export interface CertificateItem {
   id: number;
   fileName: string;
+  isPortrait?: boolean;
   institution: string;
   institutionAr: string;
+  institutionAbout?: string;
+  institutionAboutAr?: string;
   courseTitle: string;
   courseTitleAr: string;
   description: string;
   descriptionAr: string;
+  careerValue?: string;
+  careerValueAr?: string;
   verificationPlatform?: string;
   verificationId: string;
   verificationUrl?: string;

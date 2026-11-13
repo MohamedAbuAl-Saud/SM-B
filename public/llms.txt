@@ -23,26 +23,29 @@
 4. **Year 4 — Major Curricula, Verified Credentials & Team SM**: Studied CCNA and CEH curricula, earned verified certifications from global institutions (Cisco, Harvard, Fortinet, IBM, ITI Mahara-Tech, HP LIFE, Simplilearn), and founded Team **SM** (`@A_Y_TR`).
 5. **Year 5 — Present & Active Trajectory**: Continuously deepening offensive Red Team penetration-testing skills, expanding Team SM operations, and advancing along a disciplined cybersecurity path.
 
-## Verified Certifications & Credentials (7 Official Certificates)
-1. **Ethical Hacker** — Cisco Networking Academy
+## Verified Certifications & Credentials (8 Official Certificates)
+1. **Ethical Hacker** — Cisco Networking Academy (Global US Networking & Cybersecurity Leader)
    - Issued: Dec 29, 2025 | Verification Platform: Credly | ID: `d086a162-6800-4d2e-bc0f-3091278e7bc2`
    - Verify: https://www.credly.com/badges/d086a162-6800-4d2e-bc0f-3091278e7bc2
-2. **Fortinet Certified Fundamentals in Cybersecurity** — Fortinet Training Institute
+2. **Fortinet Certified Fundamentals in Cybersecurity** — Fortinet Training Institute (Enterprise NGFW & Network Security Leader)
    - Issued: Jan 2, 2026 | Expires: Jan 2, 2028 | ID: `1116581960MA`
    - Verify: https://training.fortinet.com/admin/tool/certificate/index.php
-3. **CS50's Introduction to Cybersecurity** — Harvard University / CS50
+3. **CS50's Introduction to Cybersecurity** — Harvard University / CS50 (Prestigious American Ivy League Research University)
    - Issued: 2026 (Cambridge, MA) | ID: `64a5f80e-20a9-4781-954d-8c4773414622`
    - Verify: https://cs50.harvard.edu/certificates/64a5f80e-20a9-4781-954d-8c4773414622
-4. **Web PenTesting in Practice: Recon to Remediation** — Mahara-Tech / Information Technology Institute (ITI)
+4. **Web PenTesting in Practice: Recon to Remediation** — Mahara-Tech / Information Technology Institute (ITI) (Egypt MCIT Technical Institute)
    - Issued: Nov 10, 2026 | ID: `kOo67mglkM`
    - Verify: https://maharatech.gov.eg/mod/customcert/verify_certificate.php
-5. **Cybersecurity Fundamentals** — IBM SkillsBuild
+5. **Cybersecurity Fundamentals** — IBM SkillsBuild (Global Enterprise Tech & Cloud Leader)
    - Issued: Mar 27, 2026 | Verification Platform: Credly | ID: `73444606-0deb-4543-8ffa-d6de3256ba1a`
    - Verify: https://www.credly.com/badges/73444606-0deb-4543-8ffa-d6de3256ba1a
-6. **مقدمة للتوعية بالأمن السيبراني (Introduction to Cybersecurity Awareness)** — HP LIFE / HP Foundation
+6. **مقدمة للتوعية بالأمن السيبراني (Introduction to Cybersecurity Awareness)** — HP LIFE / HP Foundation (Global HP Tech Initiative)
    - Issued: Oct 2, 2026 | ID: `50c8bc1c-94a6-4095-9bcf-588ae9de0bba`
-7. **Introduction to Cyber Security** — Simplilearn SkillUp
+7. **Introduction to Cyber Security** — Simplilearn SkillUp (Global Online Tech Bootcamp Provider)
    - Issued: Mar 26, 2026 | ID: `10010497`
+8. **Network Security (25-Hour Advanced Course · T823_1)** — The Open University (OpenLearn) (Prestigious UK Public Research University)
+   - Issued: Nov 13, 2026 | ID: `T823_1 · Profile zq106163`
+   - Verify: https://www.open.edu/openlearn/profiles/zq106163/achievements?p=0&b=dateissued&o=desc
 
 ## Core Technical Skills & Competencies
 - **Programming & Scripting**: Python, Bash, PHP, SQL, HTML, CSS, JavaScript, C, C++
@@ -51,4 +54,4 @@
 - **Infrastructure & Cloud**: Linux Administration (Debian/Ubuntu), CCNA Networking (TCP/IP, Subnetting, Routing & Switching), Cryptography, Cloud Services, Cloud Security, Microsoft Azure, Internet of Things (IoT)
 
 ## الملخص بالعربية
-**محمد أبو السعود عزت** (`@A_Y_TR`)، باحث وطالب مصري في مجال الأمن السيبراني (16 عاماً) وقائد فريق **SM**. يمتلك 5 سنوات من التعلم الذاتي المستمر والبحث العملي في عمليات الفريق الأحمر (Red Team)، اختبار اختراق الويب، وأمن الشبكات والأنظمة، إلى جانب فهم ممارسات الفريق الأزرق (Blue Team). أسس وقاد سابقاً فريقي **DF** و **EH** وطوّر نظام محادثة مشفر عبر شبكة Tor (`.onion`) وأبحاثاً دفاعية حول البرمجيات المدمجة بالذكاء الاصطناعي، وحصل على 7 شهادات موثقة من Cisco وHarvard CS50 وFortinet وIBM وITI Mahara-Tech وHP LIFE وSimplilearn.
+**محمد أبو السعود عزت** (`@A_Y_TR`)، باحث وطالب مصري في مجال الأمن السيبراني (16 عاماً) وقائد فريق **SM**. يمتلك 5 سنوات من التعلم الذاتي المستمر والبحث العملي في عمليات الفريق الأحمر (Red Team)، اختبار اختراق الويب، وأمن الشبكات والأنظمة، إلى جانب فهم ممارسات الفريق الأزرق (Blue Team). أسس وقاد سابقاً فريقي **DF** و **EH** وطوّر نظام محادثة مشفر عبر شبكة Tor (`.onion`) وأبحاثاً دفاعية حول البرمجيات المدمجة بالذكاء الاصطناعي، وحصل على 8 شهادات موثقة من جامعة هارفارد الأمريكية، والجامعة المفتوحة البريطانية (The Open University)، وسيسكو، وفورتينت، وآي بي إم، ومعهد تكنولوجيا المعلومات ITI، ومؤسسة HP، وSimplilearn.

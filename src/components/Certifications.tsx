@@ -27,26 +27,28 @@ export const Certifications: React.FC<CertificationsProps> = ({ language }) => {
     en: {
       kicker: '04 · ACADEMIC & TECHNICAL ACCREDITATION',
       title: 'Official Certifications & Verified Credentials',
-      subtitle: 'Original certifications completed through globally renowned institutions including Cisco, Harvard, Fortinet, ITI, and IBM.',
+      subtitle: 'Original certifications completed through globally renowned institutions including Harvard University (USA), The Open University (UK), Cisco, Fortinet, ITI, and IBM.',
       viewOriginal: 'View Original Certificate',
       copyCode: 'Copy Verification Code',
       copied: 'Code Copied!',
       verifyOfficial: 'Official Verification Link',
       noDirectUrl: 'Official ID for platform verification',
       noticeTitle: 'Integrity & Verification Guarantee',
-      noticeText: 'All verification IDs and credentials correspond to completed official coursework. External verification links redirect directly to issuing platforms (Credly, Harvard, Fortinet).',
+      noticeText: 'All verification IDs and credentials correspond to completed official coursework. External verification links redirect directly to issuing platforms (Credly, Harvard, The Open University, Fortinet, ITI).',
+      careerValueLabel: 'Market Value:',
     },
     ar: {
       kicker: '04 · الاعتمادات الأكاديمية والتقنية',
       title: 'الشهادات الرسمية والاعتمادات الموثقة',
-      subtitle: 'شهادات أصلية تم إتمامها بنجاح عبر جهات ومؤسسات تعليمية مرموقة عالمياً ومحلياً تشمل سيسكو، وهارفارد، وفورتينت، وITI، وآي بي إم.',
+      subtitle: 'شهادات أصلية تم إتمامها بنجاح عبر أعرق الجامعات والمؤسسات العالمية والمحلية، بما في ذلك جامعة هارفارد الأمريكية، والجامعة المفتوحة البريطانية، وسيسكو، وفورتينت، وITI، وآي بي إم.',
       viewOriginal: 'عرض الشهادة الأصلية',
       copyCode: 'نسخ كود التحقق',
       copied: 'تم النسخ!',
       verifyOfficial: 'رابط التحقق الرسمي',
       noDirectUrl: 'كود رسمي للتحقق عبر المنصة',
       noticeTitle: 'ضمان النزاهة والتحقق الأمني',
-      noticeText: 'جميع معرّفات التحقق والشهادات مطابقة لمسارات تعليمية حقيقية تم إتمامها. روابط التحقق الخارجية توجهك مباشرة إلى المنصات المانحة الرسمية (Credly، Harvard، Fortinet).',
+      noticeText: 'جميع معرّفات التحقق والشهادات مطابقة لمسارات تعليمية حقيقية تم إتمامها. روابط التحقق الخارجية توجهك مباشرة إلى المنصات المانحة الرسمية (Credly، هارفارد، الجامعة المفتوحة البريطانية، فورتينت، ITI).',
+      careerValueLabel: 'القيمة العملية:',
     }
   }[language];
 
@@ -76,7 +78,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ language }) => {
           </div>
         </div>
 
-        {/* 7 Certificates Cards Grid */}
+        {/* 8 Certificates Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificatesData.map((cert) => {
             const isCopied = copiedId === cert.verificationId;
@@ -91,14 +93,20 @@ export const Certifications: React.FC<CertificationsProps> = ({ language }) => {
                   {/* Certificate Image Frame */}
                   <div
                     onClick={() => setSelectedCert(cert)}
-                    className="relative aspect-[16/10] bg-black border-b border-zinc-900 overflow-hidden cursor-pointer group-hover:brightness-105 transition-all"
+                    className={`relative aspect-[16/10] border-b border-zinc-900 overflow-hidden cursor-pointer group-hover:brightness-105 transition-all ${
+                      cert.isPortrait ? 'bg-zinc-950 p-1.5 flex items-center justify-center' : 'bg-black'
+                    }`}
                   >
                     {!hasImgError ? (
                       <img
                         src={`/${cert.fileName}`}
                         alt={cert.courseTitle}
                         onError={() => handleImageError(cert.id)}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className={`w-full h-full transition-transform duration-500 ${
+                          cert.isPortrait
+                            ? 'object-contain group-hover:scale-105'
+                            : 'object-cover object-center group-hover:scale-105'
+                        }`}
                         loading="lazy"
                       />
                     ) : (
@@ -137,10 +145,17 @@ export const Certifications: React.FC<CertificationsProps> = ({ language }) => {
 
                   {/* Content */}
                   <div className="p-5">
-                    {/* Institution */}
-                    <div className="text-xs font-mono-data text-[#FF2638] font-semibold flex items-center gap-1.5 mb-1.5">
-                      <Shield className="w-3.5 h-3.5" />
-                      <span>{language === 'en' ? cert.institution : cert.institutionAr}</span>
+                    {/* Institution & Role */}
+                    <div className="mb-2">
+                      <div className="text-xs font-mono-data text-[#FF2638] font-semibold flex items-center gap-1.5">
+                        <Shield className="w-3.5 h-3.5 shrink-0" />
+                        <span>{language === 'en' ? cert.institution : cert.institutionAr}</span>
+                      </div>
+                      {(cert.institutionAbout || cert.institutionAboutAr) && (
+                        <div className="text-[11px] text-white/75 mt-0.5 leading-snug">
+                          {language === 'en' ? cert.institutionAbout : cert.institutionAboutAr}
+                        </div>
+                      )}
                     </div>
 
                     {/* Course Title */}
@@ -149,9 +164,17 @@ export const Certifications: React.FC<CertificationsProps> = ({ language }) => {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-[#9CA3AF] leading-relaxed mb-4">
+                    <p className="text-xs text-[#9CA3AF] leading-relaxed mb-2.5">
                       {language === 'en' ? cert.description : cert.descriptionAr}
                     </p>
+
+                    {/* Career / Practical Value */}
+                    {(cert.careerValue || cert.careerValueAr) && (
+                      <div className="mb-3 p-2.5 rounded-lg bg-zinc-950/70 border border-zinc-800/80 text-[11px] text-[#D1D5DB] leading-relaxed">
+                        <span className="text-emerald-400 font-bold">{t.careerValueLabel} </span>
+                        {language === 'en' ? cert.careerValue : cert.careerValueAr}
+                      </div>
+                    )}
 
                     {/* Dates */}
                     {cert.issueDate && (

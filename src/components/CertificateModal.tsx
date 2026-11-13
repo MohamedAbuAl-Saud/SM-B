@@ -56,7 +56,9 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ cert, langua
         <div className="p-6 overflow-y-auto space-y-6">
           
           {/* Certificate Image Frame */}
-          <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl overflow-hidden bg-black border border-zinc-900 flex items-center justify-center">
+          <div className={`relative w-full rounded-xl overflow-hidden bg-black border border-zinc-900 flex items-center justify-center ${
+            cert.isPortrait ? 'h-[52vh] sm:h-[62vh] bg-zinc-950 p-2' : 'aspect-[16/10] sm:aspect-[16/9]'
+          }`}>
             {!imgError ? (
               <img
                 src={`/${cert.fileName}`}
@@ -100,11 +102,18 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ cert, langua
             
             {/* Left: Metadata */}
             <div className="p-4 rounded-xl bg-black border border-zinc-800 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-[#9CA3AF]">
-                <Award className="w-4 h-4 text-[#FF2638]" />
-                <span className="font-semibold text-white">
-                  {language === 'en' ? cert.institution : cert.institutionAr}
-                </span>
+              <div className="flex items-start gap-2 text-[#9CA3AF]">
+                <Award className="w-4 h-4 text-[#FF2638] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-white block">
+                    {language === 'en' ? cert.institution : cert.institutionAr}
+                  </span>
+                  {(cert.institutionAbout || cert.institutionAboutAr) && (
+                    <span className="text-[11px] text-[#9CA3AF] block mt-0.5">
+                      {language === 'en' ? cert.institutionAbout : cert.institutionAboutAr}
+                    </span>
+                  )}
+                </div>
               </div>
               
               {cert.issueDate && (
@@ -124,6 +133,13 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ cert, langua
               <div className="pt-2 text-[#9CA3AF] leading-relaxed">
                 {language === 'en' ? cert.description : cert.descriptionAr}
               </div>
+
+              {(cert.careerValue || cert.careerValueAr) && (
+                <div className="pt-2 text-emerald-300/90 leading-relaxed border-t border-zinc-900">
+                  <strong className="text-emerald-400">{language === 'en' ? 'Market Value: ' : 'القيمة في سوق العمل: '}</strong>
+                  {language === 'en' ? cert.careerValue : cert.careerValueAr}
+                </div>
+              )}
             </div>
 
             {/* Right: Verification Tools */}
